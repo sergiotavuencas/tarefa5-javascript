@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Tarefa 5 - Javascript</title>
+  </head>
+  <body class="align-items-center justify-content-center">
+    <div class="row">
+      <div class="col">
+        <h1>Exercício 2</h1>
+        <p id="ex2"></p>
+      </div>
+      <div class="col">
+        <h1>Exercício 3</h1>
+        <p id="ex3"></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <h1>Exercício 4</h1>
+        <input id="multiple-for" type="number" />
+        <button onclick="getMultiplicationTableFor()">Mostrar</button>
+        <p id="ex4"></p>
+      </div>
+      <div class="col">
+        <h1>Exercício 5</h1>
+        <input id="value1" type="number" />
+        <input id="value2" type="number" />
+        <button onclick="resolveOperation(this.value)" value="+">+</button>
+        <button onclick="resolveOperation(this.value)" value="-">-</button>
+        <button onclick="resolveOperation(this.value)" value="*">*</button>
+        <button onclick="resolveOperation(this.value)" value="/">/</button>
+        <p id="ex5"></p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <h1>Exercício 6</h1>
+        <p id="ex6"></p>
+      </div>
+      <div class="col">
+        <h1>Exercício 7</h1>
+        <div class="row">
+          <label>Custo de Fábrica</label>
+          <input id="custoFabrica" type="number" />
+        </div>
+        <div class="row">
+          <label>Percentual do Distribuidor</label>
+          <input id="percDistribuidor" type="number" />
+        </div>
+        <div class="row">
+          <label>Percentual do Imposto</label>
+          <input id="percImpostos" type="number" />
+        </div>
+        <div class="row" style="padding-top: 1rem;">
+          <button onclick="calculateNewCarCost()">Calcular Custo Final</button>
+        </div>
+        <p id="valorfinal"></p>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+
+    <script src="main.js"></script>
+  </body>
+</html>
