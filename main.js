@@ -1,19 +1,30 @@
 // Refatorações
 function createText(quantity, multiplyFor) {
-    let value = "";
+  let value = "";
 
-    for (var i = 0; i < quantity; i++) {
-        value += 
-            i < (quantity - 1) ?
-            (i + 1) * multiplyFor + ", "
-            : (i + 1) * multiplyFor;
-    }
+  for (var i = 0; i < quantity; i++) {
+    value +=
+      i < (quantity - 1) ?
+        (i + 1) * multiplyFor + ", "
+        : (i + 1) * multiplyFor;
+  }
 
-    return value;
+  return value;
 }
 
-function calculate (operation, args) {
-
+function operationResult(mathOperation, firstValue, secondValue) {
+  if (mathOperation === "+") {
+    return firstValue + secondValue;
+  } else if (mathOperation === "-") {
+    return firstValue - secondValue;
+  } else if (mathOperation === "*") {
+    return firstValue * secondValue;
+  } else if (mathOperation === "/") {
+    if (secondValue === 0) {
+      return firstValue / secondValue + " and Beyond";
+    }
+    return firstValue / secondValue;
+  }
 }
 
 // Funções principais
@@ -33,20 +44,20 @@ function getMultiplicationTableFor() {
   ex4.innerHTML = createText(10, number);
 }
 
-function resolveOperation(operation) {
-    let value1 = parseFloat(document.getElementById("value1").value);
-    let value2 = parseFloat(document.getElementById("value2").value);
-    let result = document.getElementById("ex5");
-    
-    if (operation === "+") {
-        result.innerHTML = value1 + value2;
-    } else if (operation === "-") {
-        result.innerHTML = value1 - value2;
-    } else if (operation === "*") {
-        result.innerHTML = value1 * value2;
-    } else if (operation === "/") {
-        result.innerHTML = value1 / value2;
-    }
+function getOperation(operation) {
+  let paragraph = document.getElementById("ex5");
+  let result;
+
+  let value1 = parseFloat(document.getElementById("value1").value);
+  let value2 = parseFloat(document.getElementById("value2").value);
+
+  if (isNaN(value1) || isNaN(value2)) {
+    result = "Digite algum valor em ambos os campos";
+  } else {
+    result = "Resultado = " + operationResult(operation, value1, value2);
+  }
+
+  paragraph.innerHTML = result;
 }
 
 function showOnlyEven() {
@@ -61,15 +72,24 @@ function showOnlyEven() {
 }
 
 function calculateNewCarCost() {
-    let factoryCost = parseFloat(document.getElementById("custoFabrica").value);
-    let distributorPerc = parseFloat(document.getElementById("percDistribuidor").value);
-    let taxPerc = parseFloat(document.getElementById("percImpostos").value);
-    let finalValue = document.getElementById("valorfinal");
+  let factoryCost = parseFloat(document.getElementById("custoFabrica").value);
+  let distributorPercentual = parseFloat(document.getElementById("percDistribuidor").value);
+  let taxPercentual = parseFloat(document.getElementById("percImpostos").value);
+  let finalValue = document.getElementById("valorfinal");
 
-    finalValue.innerHTML = "R$ " + (
-        factoryCost + (factoryCost * distributorPerc) +
-        (factoryCost + taxPerc)
+  var formatter = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  });
+
+  if (isNaN(factoryCost) || isNaN(distributorPercentual) || isNaN(taxPercentual)) {
+    finalValue.innerHTML = "Por favor preencha todos os campos";
+  } else {
+    finalValue.innerHTML = formatter.format(
+      factoryCost + (factoryCost * distributorPercentual) +
+      (factoryCost + taxPercentual)
     );
+  }
 }
 
 window.onload = () => {

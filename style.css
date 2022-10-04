@@ -1,9 +1,11 @@
 body {
-    padding: 5rem;
+    padding: 3rem;
+    background-color: beige;
 }
 
 p {
     margin: 0;
+    font-size: 2rem;
 }
 
 input::-webkit-outer-spin-button,
@@ -13,5 +15,19 @@ input::-webkit-inner-spin-button {
 }
 
 .col {
-    border: 1rem solid black;
+    border: .2rem solid beige;
+    padding: 2rem;
+    background-color: bisque;
+}
+
+.col .elements {
+    border: .4rem solid beige;
+}
+
+#ex4, #ex5, #valorfinal {
+    padding-top: 1rem;
+}
+
+#value1, #value2 {
+    width: 4rem;
 }

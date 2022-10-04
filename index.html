@@ -18,56 +18,68 @@
     <div class="row">
       <div class="col">
         <h1>Exercício 2</h1>
-        <p id="ex2"></p>
+        <div class="col elements">
+          <p id="ex2"></p>
+        </div>
       </div>
       <div class="col">
         <h1>Exercício 3</h1>
-        <p id="ex3"></p>
+        <div class="col elements">
+          <p id="ex3"></p>
+        </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col">
         <h1>Exercício 4</h1>
-        <input id="multiple-for" type="number" />
-        <button onclick="getMultiplicationTableFor()">Mostrar</button>
-        <p id="ex4"></p>
+        <div class="col elements">
+          <input id="multiple-for" type="number" />
+          <button onclick="getMultiplicationTableFor()">Mostrar</button>
+          <p id="ex4"></p>
+        </div>
       </div>
       <div class="col">
         <h1>Exercício 5</h1>
-        <input id="value1" type="number" />
-        <input id="value2" type="number" />
-        <button onclick="resolveOperation(this.value)" value="+">+</button>
-        <button onclick="resolveOperation(this.value)" value="-">-</button>
-        <button onclick="resolveOperation(this.value)" value="*">*</button>
-        <button onclick="resolveOperation(this.value)" value="/">/</button>
-        <p id="ex5"></p>
+        <div class="col elements">
+          <input id="value1" type="number" />
+          <input id="value2" type="number" />
+          <button onclick="getOperation(this.value)" value="+">+</button>
+          <button onclick="getOperation(this.value)" value="-">-</button>
+          <button onclick="getOperation(this.value)" value="*">*</button>
+          <button onclick="getOperation(this.value)" value="/">/</button>
+          <p id="ex5"></p>
+        </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col">
         <h1>Exercício 6</h1>
-        <p id="ex6"></p>
+        <div class="col elements">
+          <p id="ex6"></p>
+        </div>
       </div>
       <div class="col">
         <h1>Exercício 7</h1>
-        <div class="row">
-          <label>Custo de Fábrica</label>
-          <input id="custoFabrica" type="number" />
+        <div class="col elements">
+          <div class="row">
+            <label>Custo de Fábrica</label>
+            <input id="custoFabrica" type="number" />
+          </div>
+          <div class="row">
+            <label>Percentual do Distribuidor</label>
+            <input id="percDistribuidor" type="number" />
+          </div>
+          <div class="row">
+            <label>Percentual do Imposto</label>
+            <input id="percImpostos" type="number" />
+          </div>
+          <div class="row" style="padding-top: 1rem">
+            <button onclick="calculateNewCarCost()">Calcular Custo Final</button>
+          </div>
+          <p id="valorfinal"></p>
         </div>
-        <div class="row">
-          <label>Percentual do Distribuidor</label>
-          <input id="percDistribuidor" type="number" />
-        </div>
-        <div class="row">
-          <label>Percentual do Imposto</label>
-          <input id="percImpostos" type="number" />
-        </div>
-        <div class="row" style="padding-top: 1rem;">
-          <button onclick="calculateNewCarCost()">Calcular Custo Final</button>
-        </div>
-        <p id="valorfinal"></p>
       </div>
     </div>
 
